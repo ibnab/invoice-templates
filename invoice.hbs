@@ -4,15 +4,16 @@
 </head>
 <body id="body">
 <header>
+    {{#with invoice.billingAccount.responsibleParty.currentPostalAddress}}
     <address>
         <img alt="logo" src="/{{repoPath}}/images/WPE-logo.png">
 
-        <p>Version 3<br />
-            Address 1<br />
-            Address 2<br />
-            City, ST 555555</p>
+        <p>{{invoice.billingAccount.responsibleParty.fullName}}<br />
+            {{line1}}<br />
+            {{line2}}<br />
+            {{city}}, {{postalCode}}, {{country.code}}</p>
     </address>
-
+    {{/with}}
     <table class="meta">
         <tr>
             <th>Invoice Number:</th>
